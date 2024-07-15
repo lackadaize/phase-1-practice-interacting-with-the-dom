@@ -1,7 +1,7 @@
 // DOMContentLoaded
 document.addEventListener("DOMContentLoaded", () => {
     counterBox()
-    commentForm()
+    commentBox()
 })
 
 // Global Variables
@@ -53,14 +53,14 @@ function counterBox () {
     pauseBtn.addEventListener("click", countPauseResume)
     minusBtn.addEventListener("click", countMinus)
     plusBtn.addEventListener("click", countPlus)
-    heartBtn.addEventListener("click", heart)
+    heartBtn.addEventListener("click", heart)   
 }
 
 // Comment Functions
-function commentForm() {
-    document.getElementById('comment-form').addEventListener('submit', (e) => {
+function commentBox() {
+    const commentForm = document.getElementById("comment-form")
+    commentForm.addEventListener('submit', (e) => {
         e.preventDefault()
-        const commentForm = document.getElementById("comment-form")
         let commentInput = document.getElementById("comment-input").value
         let commentList = document.getElementById("list")
         let comment = document.createElement('p')
