@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // Global Variables
 let count = 0
-let countInterval
+let countIntervalId
 let paused = false
 
 // Counter Functions
@@ -19,12 +19,12 @@ function counterBox () {
     const heartBtn = document.getElementById("heart")
     const pauseBtn = document.getElementById("pause")
 
-    // Initial Count
+    // Initial Counter
     function countInterval () {
         count++
         counter.textContent = count
     }
-    setInterval(countInterval, 1000)
+    countIntervalId = setInterval(countInterval, 1000)
 
     // Button Functions
     function countMinus () {
@@ -52,6 +52,7 @@ function counterBox () {
         minusBtn.disabled = true
         plusBtn.disabled = true
         heartBtn.disabled = true
+        clearInterval(countIntervalId)
     }
 
     function countResume () {
@@ -60,7 +61,8 @@ function counterBox () {
         pauseBtn.textContent = `pause`
         minusBtn.disabled = false
         plusBtn.disabled = false
-        heartBtn.disabled = false      
+        heartBtn.disabled = false 
+        countIntervalId = setInterval(countInterval, 1000)     
     }
 
     function heart () {
@@ -94,5 +96,4 @@ function commentBox() {
 
 /*
 "Like" an individual number of the counter. I should see the count of the number of "likes" associated with that number displayed.
-Click the "resume" button to restart the counter and re-enable the buttons.
 */
