@@ -37,15 +37,30 @@ function counterBox () {
         counter.textContent = count
     }
 
+    function countPauseResume () {
+        console.log("Hello World!")
+    }
+
+    function heart () {
+        console.log("Hello World!")
+        const heartList = document.querySelector(".likes")
+        const heartLike = document.createElement('li')
+        heartLike.textContent = `${count} has been liked 1 time`
+        heartList.appendChild(heartLike)
+    }
+
     // Event Listeners
+    pauseBtn.addEventListener("click", countPauseResume)
     minusBtn.addEventListener("click", countMinus)
     plusBtn.addEventListener("click", countPlus)
+    heartBtn.addEventListener("click", heart)
 }
 
 // Comment Functions
 function commentForm() {
     document.getElementById('comment-form').addEventListener('submit', (e) => {
         e.preventDefault()
+        const commentForm = document.getElementById("comment-form")
         let commentInput = document.getElementById("comment-input").value
         let commentList = document.getElementById("list")
         let comment = document.createElement('p')
