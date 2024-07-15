@@ -39,6 +39,18 @@ function counterBox () {
 
     function countPauseResume () {
         console.log("Hello World!")
+        pauseBtn.textContent = `resume`
+        minusBtn.disabled = true
+        plusBtn.disabled = true
+        heartBtn.disabled = true
+    }
+
+    function countPause () {
+
+    }
+
+    function countResume () {
+        
     }
 
     function heart () {
@@ -71,7 +83,6 @@ function commentBox() {
 }
 
 /*
-Manually increment and decrement the counter using the plus and minus buttons.
 "Like" an individual number of the counter. I should see the count of the number of "likes" associated with that number displayed.
 Pause the counter, which should:
 pause the counter
