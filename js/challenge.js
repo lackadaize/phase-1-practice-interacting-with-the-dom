@@ -46,7 +46,6 @@ function counterBox () {
     }
 
     function countPause () {
-        console.log("Hello World!")
         paused = true
         pauseBtn.textContent = `resume`
         minusBtn.disabled = true
@@ -56,7 +55,6 @@ function counterBox () {
     }
 
     function countResume () {
-        console.log("Hello World!")
         paused = false
         pauseBtn.textContent = `pause`
         minusBtn.disabled = false
@@ -66,7 +64,6 @@ function counterBox () {
     }
 
     function heart () {
-        console.log("Hello World!")
         const heartList = document.querySelector(".likes")
         const heartLike = document.createElement('li')
         heartLike.textContent = `${count} has been liked 1 time`
@@ -74,10 +71,10 @@ function counterBox () {
     }
 
     // Event Listeners
-    pauseBtn.addEventListener("click", countPauseResume)
-    minusBtn.addEventListener("click", countMinus)
-    plusBtn.addEventListener("click", countPlus)
-    heartBtn.addEventListener("click", heart)   
+    pauseBtn.addEventListener('click', countPauseResume)
+    minusBtn.addEventListener('click', countMinus)
+    plusBtn.addEventListener('click', countPlus)
+    heartBtn.addEventListener('click', heart)   
 }
 
 // Comment Functions
@@ -95,5 +92,5 @@ function commentBox() {
 }
 
 /*
-"Like" an individual number of the counter. I should see the count of the number of "likes" associated with that number displayed.
+I should see the count of the number of "likes" associated with that number displayed.
 */
