@@ -24,7 +24,7 @@ function counterBox () {
         count++
         counter.textContent = count
     }
-    setInterval(countInterval, 1000);
+    setInterval(countInterval, 1000)
 
     // Button Functions
     function countMinus () {
@@ -38,19 +38,29 @@ function counterBox () {
     }
 
     function countPauseResume () {
+        if (paused == false) {
+            countPause() 
+        } else {
+            countResume()
+        }
+    }
+
+    function countPause () {
         console.log("Hello World!")
+        paused = true
         pauseBtn.textContent = `resume`
         minusBtn.disabled = true
         plusBtn.disabled = true
         heartBtn.disabled = true
     }
 
-    function countPause () {
-
-    }
-
     function countResume () {
-        
+        console.log("Hello World!")
+        paused = false
+        pauseBtn.textContent = `pause`
+        minusBtn.disabled = false
+        plusBtn.disabled = false
+        heartBtn.disabled = false      
     }
 
     function heart () {
@@ -84,9 +94,5 @@ function commentBox() {
 
 /*
 "Like" an individual number of the counter. I should see the count of the number of "likes" associated with that number displayed.
-Pause the counter, which should:
-pause the counter
-disable all buttons except the pause button
-switch the label on the button from "pause" to "resume"
 Click the "resume" button to restart the counter and re-enable the buttons.
 */
